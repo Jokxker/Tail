@@ -15,10 +15,6 @@ public class Tail {
     @Argument(usage = "inpName", metaVar = "ArrayList<String>")
     private ArrayList<String> inpName = new ArrayList<>();
 
-    public static void main(String[] args) {
-        new Tail().parser(args);
-    }
-
     public void parser(String[] args) {
         CmdLineParser pars = new CmdLineParser(this);
         try {

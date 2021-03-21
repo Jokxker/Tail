@@ -24,12 +24,12 @@ public class SelectTail {
         StringBuilder result = new StringBuilder();
         InputStream input = System.in;
         if (inputName.isEmpty()) {
-            result.append(lineOrSymbol(input));
+            result.append(tail(input));
         } else {
             for (String s : inputName) {
                 File inputFile = new File(s);
                 try {
-                    result.append(inputFile.getName()).append("\n").append(lineOrSymbol(new FileInputStream(inputFile)));
+                    result.append(inputFile.getName()).append("\n").append(tail(new FileInputStream(inputFile)));
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 }
@@ -46,49 +46,33 @@ public class SelectTail {
         }
     }
 
-    public String lineOrSymbol(InputStream input) {
+    public String tail(InputStream input) {
         if (numSymbols == null && numLines == null) numLines = 10;
-        if (numSymbols != null) {
-            return tailSymbol(input);
-        } else {
-            return tailLine(input);
-        }
-    }
-
-    public String tailSymbol(InputStream input) {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(input));
-        StringBuilder result = new StringBuilder();
-        String line;
-        try {
-            while ((line = reader.readLine()).length() != 0) {
-                result.append(line).append("\n");
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        if (result.length() > numSymbols) {
-            result.delete(0, (result.length() - 1) - numSymbols);
-        }
-        return result.toString();
-    }
-
-    public String tailLine(InputStream input) {
         BufferedReader reader = new BufferedReader(new InputStreamReader(input));
         ArrayList<String> listResult = new ArrayList<>();
         StringBuilder result = new StringBuilder();
         String line;
         try {
-            while ((line = reader.readLine()).length() != 0) {
-                listResult.add(line);
-                if (listResult.size() > numLines) {
-                    listResult.remove(0);
+            while ((line = reader.readLine()) != null) {
+                if (line.equals("end")) break;
+                if (numSymbols == null) {
+                    listResult.add(line);
+                    if (listResult.size() > numLines) {
+                        listResult.remove(0);
+                    }
+                } else {
+                    result.append(line).append("\n");
                 }
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        for (String s : listResult) {
-            result.append(s).append("\n");
+        if (numSymbols == null) {
+            for (String s : listResult) {
+                result.append(s).append("\n");
+            }
+        } else if (result.length() > numSymbols) {
+            result.delete(0, (result.length() - 1) - numSymbols);
         }
         return result.toString();
     }

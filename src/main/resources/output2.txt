@@ -1,0 +1,24 @@
+inputParam2.txt
+
+A programmer's most often-used computer language (e.g., Assembly,
+ COBOL, C, C++, C#, JavaScript, Lisp, Python, Java) may be prefixed
+ to the term programmer. Some who work with web programming languages
+ also prefix their titles with web. 
+inputParam2.txt
+
+A programmer's most often-used computer language (e.g., Assembly,
+ COBOL, C, C++, C#, JavaScript, Lisp, Python, Java) may be prefixed
+ to the term programmer. Some who work with web programming languages
+ also prefix their titles with web. 
+inputParam3.txt
+ видеозаписи, включая видеоблоги, слайд-шоу, юмористические видеоролики
+ и прочее. По данным «Российской газеты», в апреле 2013 года 2 % аудитории
+ сервиса, или 51 миллион человек, составляли россияне[8]. На сайте есть
+ различные музыкальные чарты, показывающие предпочтения пользователей в
+ зависимости от географического положения[9]. 
+inputParam4.txt
+ Последней на данный момент операционной системой Microsoft является
+ Windows 10, представленная в июле 2015 года.
+
+Последней на данный момент операционной системой Microsoft является
+ Windows 10, представленная в июле 2015 года.
